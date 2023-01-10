@@ -16,7 +16,9 @@ function sostavChisla(massivChisel, chislo) {
 	// код писать только внутри данной функции
     let result = [];
 
-    
+    //сохранение в массиве уникальных числе
+    let massivChisel = [ ...new Set(massivChisel)];
+
 	return [[1, 2], [3]];
 }
 
