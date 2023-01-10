@@ -14,20 +14,20 @@
 */
 function sostavChisla(massivChisel, chislo) {
 	// код писать только внутри данной функции
-    let result = [];
+  let result = [];
 
-    //сохранение в массиве уникальных числе
-    let massivChisel = [ ...new Set(massivChisel)];
+  //сохранение в массиве уникальных числе
+  massivChisel = [ ...new Set(massivChisel)];
     
-    // проверка на положительные числа
-    for(let e of massivChisel){
-        if(e <= 0)
-        {
-            return console.log('В массиве ' + massivChisel + ' есть трицательное число ' + e)
-        }
-      }
+  // проверка на положительные числа
+  for(let e of massivChisel){
+    if(e <= 0){
+      return console.log('В массиве ' + massivChisel + ' есть отрицательное число ' + e)
+    }
+  }
 
-	return [[1, 2], [3]];
+  
+
 }
 
 // console.log(sostavChisla([8, 2, 3, 4, 6, 7, 1], 99));
@@ -104,11 +104,21 @@ function runTests() {
       if(!compareArraysOfNumericArrays(
           result, 
           test.result)
-      ) {
-        errors++;
-        console.log('--------------------------------------------')
-        console.log("failed for test", test, "Got result", result);
-      }
-    } catch(e) {
+          ) {
+      errors++;
+      console.log('--------------------------------------------')
+      console.log("failed for test", test, "Got result", result);
+            }
+    } 
+    catch(e) {
       errors++;
       console.log("failed for", test, 'exception', e.message);
+    }    
+  }
+
+  if(errors === 0) {
+    console.log('checkStringForBracects test successfuly completed');
+  } else {
+    console.log(`checkStringForBracects test failed with ${errors} errors`);
+  }
+}
