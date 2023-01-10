@@ -26,7 +26,33 @@ function sostavChisla(massivChisel, chislo) {
     }
   }
 
-  
+  numberComb(massivChisel, chislo);
+
+  //Функция для нахождения возможных комбинаций 
+  function numberComb(massivChisel, chislo, newMassivChisel){
+    let num, sum, massiv;
+    
+    newMassivChisel = newMassivChisel || [];
+    
+    sum = newMassivChisel.reduce((x, y) => x + y, 0);
+    
+    if(sum === chislo){
+      result.push(newMassivChisel);
+    }
+    
+    if(sum > chislo){
+      return;
+    }
+    
+    for(let i=0; i < massivChisel.length; i++){
+      num = massivChisel[i];
+      massiv = massivChisel.slice(i+1);
+      numberComb(massiv, chislo, newMassivChisel.concat(num));
+    }
+    
+  }
+
+  return result;
 
 }
 
