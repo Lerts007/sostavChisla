@@ -14,6 +14,9 @@
 */
 function sostavChisla(massivChisel, chislo) {
 	// код писать только внутри данной функции
+    let result = [];
+
+    
 	return [[1, 2], [3]];
 }
 
