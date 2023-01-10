@@ -18,6 +18,14 @@ function sostavChisla(massivChisel, chislo) {
 
     //сохранение в массиве уникальных числе
     let massivChisel = [ ...new Set(massivChisel)];
+    
+    // проверка на положительные числа
+    for(let e of massivChisel){
+        if(e <= 0)
+        {
+            return console.log('В массиве ' + massivChisel + ' есть трицательное число ' + e)
+        }
+      }
 
 	return [[1, 2], [3]];
 }
